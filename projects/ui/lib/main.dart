@@ -2,37 +2,50 @@ import 'package:flutter/material.dart';
 import 'pages/alert_dialog_page.dart';
 import 'pages/hello_world_page.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Center(
-      child: new RaisedButton(
-        child: new Text(
-        "Show Dialog Sample",
-      ),
-        onPressed: (){
-          Navigator.of(context).pushNamed('/dialog/alert');
-        },
-      ),
-    ),
-    ) ;
+      body: new Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Padding(
+                padding: new EdgeInsets.all(8.0),
+                child: new Center(
+                  child: new RaisedButton(
+                    child: new Text(
+                      "Hello World Page",
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/hello-world');
+                    },
+                  ),
+                )),
+            new Padding(
+                padding: new EdgeInsets.all(8.0),
+                child: new Center(
+                  child: new RaisedButton(
+                    child: new Text(
+                      "Show Dialog Page",
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/dialog/alert');
+                    },
+                  ),
+                ))
+          ]),
+    );
   }
 }
 
-var x = new MaterialApp(
-      home: new HomeScreen(),
-      routes: <String, WidgetBuilder>{
-        '/hello-world' : (BuildContext context) => new HelloWorldPage(),
-        '/dialog/alert' : (BuildContext context) => new AlertDialogPage()
-      }
-    );
+var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
+  '/hello-world': (BuildContext context) => new HelloWorldPage(),
+  '/dialog/alert': (BuildContext context) => new AlertDialogPage()
+});
 
 void main() {
-  runApp(
-    x
-  );
+  runApp(x);
 }
 
-void onPressed() {
-}
+void onPressed() {}
