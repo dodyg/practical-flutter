@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'alert_dialog.dart';
 
-class Home extends StatelessWidget{
+class HomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
       child: new RaisedButton(
         child: new Text(
-        "Good morning Tarakan",
+        "Show Dialog Sample",
       ),
         onPressed: (){
-          var dlg = new AlertDialog(
-            title: new Text("Greeting"),
-            content: new Text("Hello World"),
-          );
-          showDialog(context:context, child: dlg);
+          Navigator.of(context).pushNamed('/dialog/alert');
         },
       )
     ),
@@ -23,7 +20,10 @@ class Home extends StatelessWidget{
 }
 
 var x = new MaterialApp(
-      home: new Home(),
+      home: new HomeScreen(),
+      routes: <String, WidgetBuilder>{
+        '/dialog/alert' : (BuildContext context) => new AlertDialogPage()
+      }
     );
 
 void main() {
