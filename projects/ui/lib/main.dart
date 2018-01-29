@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'alert_dialog.dart';
+import 'pages/alert_dialog_page.dart';
+import 'pages/hello_world_page.dart';
 
 class HomeScreen extends StatelessWidget{
   @override
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget{
         onPressed: (){
           Navigator.of(context).pushNamed('/dialog/alert');
         },
-      )
+      ),
     ),
     ) ;
   }
@@ -22,6 +23,7 @@ class HomeScreen extends StatelessWidget{
 var x = new MaterialApp(
       home: new HomeScreen(),
       routes: <String, WidgetBuilder>{
+        '/hello-world' : (BuildContext context) => new HelloWorldPage(),
         '/dialog/alert' : (BuildContext context) => new AlertDialogPage()
       }
     );
