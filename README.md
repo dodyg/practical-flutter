@@ -5,13 +5,14 @@ I have no idea yet on Flutter development but I am going to figure it out this y
 
 Samples:
 
-* [alert_dialog_page.dart](https://github.com/dodyg/practical-flutter/tree/master/projects/ui/lib/pages/alert_dialog_page.dart)
-  
-  Shows how to create and display dialog page
 
 * [hello_world_page.dart](https://github.com/dodyg/practical-flutter/tree/master/projects/ui/lib/pages/hello_world_page.dart)
 
   Hello world page
+
+* [alert_dialog_page.dart](https://github.com/dodyg/practical-flutter/tree/master/projects/ui/lib/pages/alert_dialog_page.dart)
+  
+  Shows how to create and display dialog page
 
 * [row_page.dart](https://github.com/dodyg/practical-flutter/tree/master/projects/ui/lib/pages/row_page.dart)
 
