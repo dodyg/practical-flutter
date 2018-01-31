@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'pages/alert_dialog_page.dart';
 import 'pages/hello_world_page.dart';
 import 'pages/row_page.dart';
+import 'pages/column_page.dart';
+
+const Inset = 8.0;
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -12,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.all(Inset),
                 child: new Center(
                   child: new RaisedButton(
                     child: new Text(
@@ -24,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )),
             new Padding(
-                padding: new EdgeInsets.all(8.0),
+                padding: new EdgeInsets.all(Inset),
                 child: new Center(
                   child: new RaisedButton(
                     child: new Text(
@@ -36,12 +39,23 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )),
                 new Padding(
-                  padding: new EdgeInsets.all(8.0),
+                  padding: new EdgeInsets.all(Inset),
                   child: new Center(
                     child: new RaisedButton(
                       child: new Text("Show Rows"),
                       onPressed: () {
                         Navigator.of(context).pushNamed('/layouts/rows/simple');
+                      },
+                    )
+                  )
+                ),
+                new Padding(
+                  padding: new EdgeInsets.all(Inset),
+                  child: new Center(
+                    child: new RaisedButton(
+                      child: new Text("Show Columns"),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/layouts/columns/simple');   
                       },
                     )
                   )
@@ -54,7 +68,8 @@ class HomeScreen extends StatelessWidget {
 var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/hello-world': (context) => new HelloWorldPage(),
   '/dialog/alert': (context) => new AlertDialogPage(),
-  '/layouts/rows/simple': (context) => new RowPage()
+  '/layouts/rows/simple': (context) => new RowPage(),
+  '/layouts/columns/simple' : (context) => new ColumnPage()
 });
 
 void main() {
