@@ -3,6 +3,7 @@ import 'pages/alert_dialog_page.dart';
 import 'pages/hello_world_page.dart';
 import 'pages/row_page.dart';
 import 'pages/column_page.dart';
+import 'pages/container_page.dart';
 
 const Inset = 8.0;
 
@@ -69,7 +70,8 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/hello-world': (context) => new HelloWorldPage(),
   '/dialog/alert': (context) => new AlertDialogPage(),
   '/layouts/rows/simple': (context) => new RowPage(),
-  '/layouts/columns/simple' : (context) => new ColumnPage()
+  '/layouts/columns/simple' : (context) => new ColumnPage(),
+  '/layouts/containers/simple' : (context) => new ContainerPage()
 });
 
 void main() {
