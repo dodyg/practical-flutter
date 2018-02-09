@@ -7,6 +7,20 @@ import 'pages/container_page.dart';
 
 const Inset = 8.0;
 
+Padding navigateTo(BuildContext context, String text, String nav) =>
+    new Padding(
+        padding: new EdgeInsets.all(Inset),
+        child: new Center(
+          child: new RaisedButton(
+            child: new Text(
+              text,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(nav);
+            },
+          ),
+        ));
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,52 +29,10 @@ class HomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Padding(
-                padding: new EdgeInsets.all(Inset),
-                child: new Center(
-                  child: new RaisedButton(
-                    child: new Text(
-                      "Hello World Page",
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/hello-world');
-                    },
-                  ),
-                )),
-            new Padding(
-                padding: new EdgeInsets.all(Inset),
-                child: new Center(
-                  child: new RaisedButton(
-                    child: new Text(
-                      "Show Dialog Page",
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/dialog/alert');
-                    },
-                  ),
-                )),
-                new Padding(
-                  padding: new EdgeInsets.all(Inset),
-                  child: new Center(
-                    child: new RaisedButton(
-                      child: new Text("Show Rows"),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/layouts/rows/simple');
-                      },
-                    )
-                  )
-                ),
-                new Padding(
-                  padding: new EdgeInsets.all(Inset),
-                  child: new Center(
-                    child: new RaisedButton(
-                      child: new Text("Show Columns"),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/layouts/columns/simple');   
-                      },
-                    )
-                  )
-                )
+            navigateTo(context, "Hello World", "/hello-world"),
+            navigateTo(context, "Show Dialog Page", "/dialog/alert"),
+            navigateTo(context, "Show Rows", "/layouts/rows/simple"),
+            navigateTo(context, "Show Columns", "/layouts/columns/simple")
           ]),
     );
   }
@@ -70,12 +42,10 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/hello-world': (context) => new HelloWorldPage(),
   '/dialog/alert': (context) => new AlertDialogPage(),
   '/layouts/rows/simple': (context) => new RowPage(),
-  '/layouts/columns/simple' : (context) => new ColumnPage(),
-  '/layouts/containers/simple' : (context) => new ContainerPage()
+  '/layouts/columns/simple': (context) => new ColumnPage(),
+  '/layouts/containers/simple': (context) => new ContainerPage()
 });
 
 void main() {
   runApp(x);
 }
-
-void onPressed() {}
