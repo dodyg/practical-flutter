@@ -4,6 +4,7 @@ import 'pages/hello_world_page.dart';
 import 'pages/row_page.dart';
 import 'pages/column_page.dart';
 import 'pages/container_page.dart';
+import 'pages/list_page.dart';
 
 const Inset = 8.0;
 
@@ -34,7 +35,8 @@ class HomeScreen extends StatelessWidget {
             navigateTo(context, "Show Rows", "/layouts/rows/simple"),
             navigateTo(context, "Show Columns", "/layouts/columns/simple"),
             navigateTo(context, "Container", "/layouts/containers/simple"),
-            navigateTo(context, "Container Square", "/layouts/containers/square")
+            navigateTo(context, "Container Square", "/layouts/containers/square"),
+            navigateTo(context, "List", "/layouts/list/simple")
           ]),
     );
   }
@@ -46,7 +48,8 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/rows/simple': (context) => new RowPage(),
   '/layouts/columns/simple': (context) => new ColumnPage(),
   '/layouts/containers/simple': (context) => new ContainerPage(),
-  '/layouts/containers/square' : (context) => new ContainerSquare()
+  '/layouts/containers/square' : (context) => new ContainerSquare(),
+  '/layouts/list/simple' : (context) => new ListPage()
 });
 
 void main() {
