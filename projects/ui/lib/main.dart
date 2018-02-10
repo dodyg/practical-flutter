@@ -32,7 +32,9 @@ class HomeScreen extends StatelessWidget {
             navigateTo(context, "Hello World", "/hello-world"),
             navigateTo(context, "Show Dialog Page", "/dialog/alert"),
             navigateTo(context, "Show Rows", "/layouts/rows/simple"),
-            navigateTo(context, "Show Columns", "/layouts/columns/simple")
+            navigateTo(context, "Show Columns", "/layouts/columns/simple"),
+            navigateTo(context, "Container", "/layouts/containers/simple"),
+            navigateTo(context, "Container Square", "/layouts/containers/square")
           ]),
     );
   }
@@ -43,7 +45,8 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/dialog/alert': (context) => new AlertDialogPage(),
   '/layouts/rows/simple': (context) => new RowPage(),
   '/layouts/columns/simple': (context) => new ColumnPage(),
-  '/layouts/containers/simple': (context) => new ContainerPage()
+  '/layouts/containers/simple': (context) => new ContainerPage(),
+  '/layouts/containers/square' : (context) => new ContainerSquare()
 });
 
 void main() {
