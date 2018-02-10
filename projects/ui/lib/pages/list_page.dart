@@ -34,11 +34,17 @@ class ContacListItem extends StatelessWidget{
 
   ContacListItem(this._contact);
 
+  Widget text(String txt) => new Container(
+    child : new Text(txt),
+    padding: new EdgeInsets.all(10.0),
+  );
+
   @override
   Widget build(BuildContext context)=> new Card(
       child: new Row(
         children: <Widget>[
-            new Text(_contact.name)
+          text(_contact.name),
+          text(_contact.email)
         ],
       ),
     );
