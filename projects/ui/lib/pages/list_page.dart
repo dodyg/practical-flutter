@@ -35,18 +35,20 @@ class ContacListItem extends StatelessWidget{
   ContacListItem(this._contact);
 
   Widget text(String txt) => new Container(
-    child : new Text(txt),
-    padding: new EdgeInsets.all(10.0),
+    child : new Text(txt, textAlign: TextAlign.right,),
+    padding: new EdgeInsets.all(10.0)
   );
 
   @override
   Widget build(BuildContext context)=> new Card(
-      child: new Row(
+      child: new Column(
         children: <Widget>[
           text(_contact.name),
           text(_contact.email)
         ],
+        crossAxisAlignment: CrossAxisAlignment.start,
       ),
+//color: new Color.fromARGB(0, 124,252,0),
     );
 }
 
