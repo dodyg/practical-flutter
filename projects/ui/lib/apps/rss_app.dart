@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:feedparser/feedparser.dart';
 import 'dart:io';
+import 'dart:async';
+import 'dart:convert';
 
 class _RssAppState extends State<RssApp> {
-  int _counter = 0;
+  String _output = "Waiting";
   
   void increment() async {
     var client = new HttpClient();
     var req = await client.get("www.scripting.com", 80, "rss.xml");
     var res = await req.close();
+    
+    var completer = new Completer();
+    var contents = new StringBuffer();
+    res.transform(UTF8.decoder).listen((String data) 
+    {
+      contents.write(data);
+    }, 
+    onDone: () => completer.complete(contents.toString()));
+    
+    String rss = await completer.future;
+
+    var parsed = parse(rss);
     setState(() {
-      _counter = res.statusCode + res.contentLength;
+      _output = parsed.description;
     });
   }
 
@@ -28,7 +42,7 @@ class _RssAppState extends State<RssApp> {
               onPressed: this.increment,
             ),
           ),
-          new Center(child: new Text("$_counter"))
+          new Center(child: new Text("$_output"))
         ],
       ),
     ); // TODO: implement build
