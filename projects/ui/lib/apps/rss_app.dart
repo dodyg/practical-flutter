@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:feedparser/feedparser.dart';
+import 'dart:io';
 
 class _RssAppState extends State<RssApp> {
   int _counter = 0;
-
-  void increment() {
+  
+  void increment() async {
+    var client = new HttpClient();
+    var req = await client.get("www.scripting.com", 80, "rss.xml");
+    var res = await req.close();
     setState(() {
-      _counter++;
+      _counter = res.statusCode + res.contentLength;
     });
   }
 
