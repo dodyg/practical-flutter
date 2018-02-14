@@ -5,6 +5,7 @@ import 'pages/row_page.dart';
 import 'pages/column_page.dart';
 import 'pages/container_page.dart';
 import 'pages/list_page.dart';
+import 'pages/scaffold_page.dart';
 import 'apps/rss_app.dart';
 
 const Inset = 8.0;
@@ -38,7 +39,8 @@ class HomeScreen extends StatelessWidget {
             navigateTo(context, "Container", "/layouts/containers/simple"),
             navigateTo(context, "Container Square", "/layouts/containers/square"),
             navigateTo(context, "List", "/layouts/list/simple"),
-            navigateTo(context, "RSS", "/apps/rss")
+            navigateTo(context, "RSS", "/apps/rss"),
+            navigateTo(context, "Scaffold", "/layouts/scaffold/simple")
           ]),
     );
   }
@@ -52,6 +54,7 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/containers/simple': (context) => new ContainerPage(),
   '/layouts/containers/square' : (context) => new ContainerSquare(),
   '/layouts/list/simple' : (context) => new ListPage(),
+  '/layouts/scaffold/simple' : (context) => new ScaffoldPage(),
   '/apps/rss' : (context) => new RssApp()
 });
 
