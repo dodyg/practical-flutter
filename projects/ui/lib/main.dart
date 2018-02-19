@@ -7,6 +7,7 @@ import 'pages/container_page.dart';
 import 'pages/list_page.dart';
 import 'pages/scaffold_page.dart';
 import 'apps/rss_app.dart';
+import 'apps/calculator_app.dart';
 
 const Inset = 8.0;
 
@@ -40,7 +41,8 @@ class HomeScreen extends StatelessWidget {
             navigateTo(context, "Container Square", "/layouts/containers/square"),
             navigateTo(context, "List", "/layouts/list/simple"),
             navigateTo(context, "RSS", "/apps/rss"),
-            navigateTo(context, "Scaffold", "/layouts/scaffold/simple")
+            navigateTo(context, "Scaffold", "/layouts/scaffold/simple"),
+            navigateTo(context, "Calculator", "/apps/calculator")
           ]),
     );
   }
@@ -55,7 +57,8 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/containers/square' : (context) => new ContainerSquare(),
   '/layouts/list/simple' : (context) => new ListPage(),
   '/layouts/scaffold/simple' : (context) => new ScaffoldPage(),
-  '/apps/rss' : (context) => new RssApp()
+  '/apps/rss' : (context) => new RssApp(),
+  '/apps/calculator' : (context) => new CalculatorApp()
 });
 
 void main() {
