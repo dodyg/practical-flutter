@@ -14,6 +14,12 @@ class ScaffoldPage extends StatelessWidget {
         width: 300.0,
         child: new Text("Drawer"),
       ),
+      bottomNavigationBar: new BottomNavigationBar(
+      items: [
+        new BottomNavigationBarItem(icon: new Icon(Icons.access_time), title: new Text("Add")),
+        new BottomNavigationBarItem(icon: new Icon(Icons.access_alarm), title: new Text("Alarm"))
+      ],
+      ),
       floatingActionButton: new FloatingActionButton(
           onPressed: () {
             var dlg = new AlertDialog(
