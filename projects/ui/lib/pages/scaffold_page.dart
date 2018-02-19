@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ScaffoldPage extends StatelessWidget {
+  final _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      key: _scaffoldKey,
       appBar: new AppBar(
         title: new Text("Scaffold"),
       ),
@@ -28,16 +31,11 @@ class ScaffoldPage extends StatelessWidget {
               content: new Text("Tapped $idx"),
             );
             showDialog(context: context, child: dlg);
-          
       },
       ),
       floatingActionButton: new FloatingActionButton(
           onPressed: () {
-            var dlg = new AlertDialog(
-              title: new Text("Greeting"),
-              content: new Text("Hello World"),
-            );
-            showDialog(context: context, child: dlg);
+            _scaffoldKey.currentState.openDrawer();
           },
           child: new Icon(Icons.add)),
     );
