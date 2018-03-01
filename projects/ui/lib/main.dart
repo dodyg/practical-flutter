@@ -6,6 +6,7 @@ import 'pages/column_page.dart';
 import 'pages/container_page.dart';
 import 'pages/list_page.dart';
 import 'pages/scaffold_page.dart';
+import 'pages/form_page.dart';
 import 'apps/rss_app.dart';
 import 'apps/calculator_app.dart';
 
@@ -38,11 +39,13 @@ class HomeScreen extends StatelessWidget {
             navigateTo(context, "Show Rows", "/layouts/rows/simple"),
             navigateTo(context, "Show Columns", "/layouts/columns/simple"),
             navigateTo(context, "Container", "/layouts/containers/simple"),
-            navigateTo(context, "Container Square", "/layouts/containers/square"),
+            navigateTo(
+                context, "Container Square", "/layouts/containers/square"),
             navigateTo(context, "List", "/layouts/list/simple"),
+            navigateTo(context, "Form", "/layouts/form/simple"),
             navigateTo(context, "RSS", "/apps/rss"),
             navigateTo(context, "Scaffold", "/layouts/scaffold/simple"),
-            navigateTo(context, "Calculator", "/apps/calculator")
+            navigateTo(context, "Calculator", "/apps/calculator"),
           ]),
     );
   }
@@ -54,11 +57,12 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/rows/simple': (context) => new RowPage(),
   '/layouts/columns/simple': (context) => new ColumnPage(),
   '/layouts/containers/simple': (context) => new ContainerPage(),
-  '/layouts/containers/square' : (context) => new ContainerSquare(),
-  '/layouts/list/simple' : (context) => new ListPage(),
-  '/layouts/scaffold/simple' : (context) => new ScaffoldPage(),
-  '/apps/rss' : (context) => new RssApp(),
-  '/apps/calculator' : (context) => new CalculatorApp()
+  '/layouts/containers/square': (context) => new ContainerSquare(),
+  '/layouts/list/simple': (context) => new ListPage(),
+  '/layouts/scaffold/simple': (context) => new ScaffoldPage(),
+  '/layouts/form/simple': (context) => new FormPage(),
+  '/apps/rss': (context) => new RssApp(),
+  '/apps/calculator': (context) => new CalculatorApp(),
 });
 
 void main() {
