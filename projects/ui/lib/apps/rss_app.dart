@@ -7,7 +7,7 @@ import 'dart:convert';
 class _RssAppState extends State<RssApp> {
   String _output = "Waiting";
   
-  void increment() async {
+  Future increment() async {
     var client = new HttpClient();
     var req = await client.get("www.scripting.com", 80, "rss.xml");
     var res = await req.close();
