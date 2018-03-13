@@ -10,8 +10,15 @@ int countReducer(int state, action) {
   return state;
 }
 
+loggingMiddleware(Store<int> store, action, NextDispatcher next) {
+  print('${new DateTime.now()}: $action');
+
+  next(action);
+}
+
 class ReduxCounterApp extends StatelessWidget {
-  final store = new Store<int>(countReducer, initialState: 0);
+  final store = new Store<int>(countReducer,
+      initialState: 0, middleware: [loggingMiddleware]);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class ReduxCounterApp extends StatelessWidget {
                 builder: (context, callback) => new FloatingActionButton(
                     onPressed: callback,
                     tooltip: "Increment",
-                    child: new Icon(Icons.adb)),
+                    child: new Icon(Icons.zoom_in)),
               )),
         ));
   }
