@@ -8,6 +8,7 @@ import 'pages/list_page.dart';
 import 'pages/scaffold_page.dart';
 import 'pages/form_page.dart';
 import 'pages/sized_box_page.dart';
+import 'pages/combo_box_page.dart';
 import 'apps/rss_app.dart';
 import 'apps/redux_counter/redux_counter_app.dart';
 import 'apps/calculator_app.dart';
@@ -50,7 +51,8 @@ class HomeScreen extends StatelessWidget {
               navigateTo(context, "Scaffold", "/layouts/scaffold/simple"),
               navigateTo(context, "Calculator", "/apps/calculator"),
               navigateTo(context, "SizedBox", "/layouts/sized_box/simple"),
-              navigateTo(context, "Counter", "/apps/redux_counter_app")
+              navigateTo(context, "Counter", "/apps/redux_counter_app"),
+              navigateTo(context, "Combo Box", "/elements/combobox/simple")
             ])
       ]),
     );
@@ -70,7 +72,8 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/sized_box/simple': (context) => new SizedBoxPage(),
   '/apps/rss': (context) => new RssApp(),
   '/apps/calculator': (context) => new CalculatorApp(),
-  '/apps/redux_counter_app': (context) => new ReduxCounterApp()
+  '/apps/redux_counter_app': (context) => new ReduxCounterApp(),
+  '/elements/combobox/simple': (context) => new ComboBoxPage()
 });
 
 void main() {
