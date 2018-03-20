@@ -11,7 +11,7 @@ import 'pages/sized_box_page.dart';
 import 'pages/combo_box_page.dart';
 import 'apps/rss_app.dart';
 import 'apps/redux_counter/redux_counter_app.dart';
-import 'apps/calculator_app.dart';
+import 'apps/redux_calculator/calculator_app.dart';
 
 const Inset = 8.0;
 
