@@ -7,21 +7,21 @@ enum AppOperation { Increment, Decrement, Multiply, Divide, Set, Reset, None }
 @immutable
 class AppState {
   final int total;
-  final int currentValue;
+  final int currentInput;
   final AppOperation op;
 
   AppState(
-      {this.total = 0, this.currentValue = 0, this.op = AppOperation.None});
+      {this.total = 0, this.currentInput = 0, this.op = AppOperation.None});
 
   AppState copyWith({int total, int currentValue, AppOperation op}) {
     return new AppState(
         total: total ?? this.total,
-        currentValue: currentValue ?? this.currentValue,
+        currentInput: currentValue ?? this.currentInput,
         op: op ?? this.op);
   }
 
   @override
-  String toString() => 'total:$total, currentValue:$currentValue, op:$op';
+  String toString() => 'total:$total, currentValue:$currentInput, op:$op';
 }
 
 class CalculateAction {
@@ -44,7 +44,7 @@ int totalReducer(int total, CalculateAction action) {
     case Actions.Reset:
       return 0;
     case Actions.Set:
-      return action.inputValue;
+      return total;
     default:
       throw new Exception();
   }
@@ -63,7 +63,7 @@ AppOperation appOperationReducer(Actions action) {
   return table[action];
 }
 
-AppState appStateReducer(AppState state, CalculateAction action) {
+AppState appStateReducer(AppState state, dynamic action) {
   return state.copyWith(
       total: totalReducer(state.total, action),
       currentValue: action.inputValue,
