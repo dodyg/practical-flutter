@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'package:flutter_explorer/app_samples_screen.dart';
+import 'ui_samples_screen.dart';
 import 'theme.dart';
 import 'routes.dart';
+// https://rxlabz.github.io/panache/#/editor for the theme
 
-var x = new MaterialApp(title: "Flutter Explorer", home: Scaffold(
-  appBar: AppBar(title: Text("Flutter Explorer")),
-  body: HomeScreen(),
-), routes: routes, theme: myTheme);
+var home = DefaultTabController(
+  length: 2,
+  child: Scaffold(
+    appBar: AppBar(
+      bottom: TabBar(
+        tabs: [
+          Tab(icon: Icon(Icons.directions_car)),
+          Tab(icon: Icon(Icons.directions_transit)),
+        ],
+      ),
+    ),
+    body: TabBarView(
+      children: <Widget>[
+        UISamplesScreen(),
+        AppSamplesScreen()
+      ],
+    ),
+  ),
+);
+
+var x = new MaterialApp(title: "Flutter Explorer", home: home, routes: routes, theme: myTheme);
 
 void main() {
   runApp(x);
