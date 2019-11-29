@@ -26,11 +26,14 @@ class ScaffoldPage extends StatelessWidget {
         new BottomNavigationBarItem(icon: Icon(Icons.access_alarm), title: Text("Alarm"))
       ],
       onTap: (idx) {
-            var dlg = AlertDialog(
-              title: Text("Greeting"),
-              content: Text("Tapped $idx"),
-            );
-            showDialog(context: context, child: dlg);
+            showDialog(context: context, builder: (context){
+              var dlg = AlertDialog(
+                title: Text("Greeting"),
+                content: Text("Tapped $idx"),
+              );
+
+              return dlg;
+            });
       },
       ),
       floatingActionButton: new FloatingActionButton(

@@ -10,11 +10,15 @@ class AlertDialogPage extends StatelessWidget {
           "Show Dialog",
         ),
         onPressed: () {
-          var dlg = AlertDialog(
-            title: Text("Greeting"),
-            content: Text("Hello World"),
-          );
-          showDialog(context: context, child: dlg);
+          showDialog(
+              context: context,
+              builder: (context) {
+                var dlg = AlertDialog(
+                  title: Text("Greeting"),
+                  content: Text("Hello World"),
+                );
+                return dlg;
+              });
         },
       )),
     );
