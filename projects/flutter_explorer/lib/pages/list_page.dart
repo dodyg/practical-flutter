@@ -4,15 +4,14 @@ class ListPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return new ListView(
+    return ListView(
       padding: const EdgeInsets.all(20.0),
       children: buildWidgets(),
     );
   }
 
   List<Widget> buildWidgets(){
-    //return [new Text("h")];
-    return _contacts.map((x) => new ContacListItem(x)).toList();
+    return _contacts.map((x) => ContactListItem(x)).toList();
   }
 }
 
@@ -29,18 +28,18 @@ var _contacts = const <Contact>[
   const Contact("Ying Ying Wu", "yingying@wu.com")
 ];
 
-class ContacListItem extends StatelessWidget{
+class ContactListItem extends StatelessWidget{
   final Contact _contact;
 
-  ContacListItem(this._contact);
+  ContactListItem(this._contact);
 
-  Widget text(String txt) => new Container(
+  Widget text(String txt) => Container(
     child : new Text(txt, textAlign: TextAlign.right,),
     padding: new EdgeInsets.all(10.0)
   );
 
   @override
-  Widget build(BuildContext context)=> new Card(
+  Widget build(BuildContext context)=> Card(
       child: new Column(
         children: <Widget>[
           text(_contact.name),

@@ -8,37 +8,37 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
-  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(),
-        body: new Container(
-            padding: new EdgeInsets.all(20.0),
-            child: new Form(
+    return Scaffold(
+        appBar: AppBar(),
+        body: Container(
+            padding: EdgeInsets.all(20.0),
+            child: Form(
                 key: _formKey,
-                child: new ListView(
+                child: ListView(
                   children: <Widget>[
-                    new TextFormField(
+                    TextFormField(
                       keyboardType: TextInputType.text,
-                      decoration: new InputDecoration(labelText: "Name"),
+                      decoration: InputDecoration(labelText: "Name"),
                     ),
-                    new TextFormField(
+                    TextFormField(
                       keyboardType: TextInputType.number,
-                      decoration: new InputDecoration(labelText: "Age"),
+                      decoration: InputDecoration(labelText: "Age"),
                     ),
-                    new TextFormField(
+                    TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: new InputDecoration(labelText: "Email"),
+                      decoration: InputDecoration(labelText: "Email"),
                     ),
-                    new TextFormField(
+                    TextFormField(
                         keyboardType: TextInputType.text,
                         obscureText: true,
-                        decoration: new InputDecoration(labelText: "Password")),
-                    new Container(
-                        child: new RaisedButton(
-                      child: new Text("Register"),
+                        decoration: InputDecoration(labelText: "Password")),
+                    Container(
+                        child: RaisedButton(
+                      child: Text("Register"),
                       onPressed: null,
                     ))
                   ],

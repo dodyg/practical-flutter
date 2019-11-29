@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
                   context, "Container Square", "/layouts/containers/square"),
               navigateTo(context, "List", "/layouts/list/simple"),
               navigateTo(context, "Form", "/layouts/form/simple"),
-              navigateTo(context, "RSS", "/apps/rss"),
               navigateTo(context, "Scaffold", "/layouts/scaffold/simple"),
               navigateTo(context, "Calculator", "/apps/calculator"),
               navigateTo(context, "SizedBox", "/layouts/sized_box/simple"),

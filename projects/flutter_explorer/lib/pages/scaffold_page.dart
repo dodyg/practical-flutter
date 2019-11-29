@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class ScaffoldPage extends StatelessWidget {
-  final _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       key: _scaffoldKey,
-      appBar: new AppBar(
-        title: new Text("Scaffold"),
+      appBar: AppBar(
+        title: Text("Scaffold"),
       ),
-      body: new Text("This is body"),
-      drawer: new Container(
-        key: new Key("drawer"),
-        decoration: new BoxDecoration(color: Colors.redAccent),
+      body: Text("This is body"),
+      drawer: Container(
+        key: Key("drawer"),
+        decoration: BoxDecoration(color: Colors.redAccent),
         width: 300.0,
-        child: new Text("Drawer"),
+        child: Text("Drawer"),
       ),
       bottomNavigationBar: new BottomNavigationBar(
       items: [
@@ -23,12 +23,12 @@ class ScaffoldPage extends StatelessWidget {
           icon: new Icon(Icons.access_time), 
           title: new Text("Add")
         ),
-        new BottomNavigationBarItem(icon: new Icon(Icons.access_alarm), title: new Text("Alarm"))
+        new BottomNavigationBarItem(icon: Icon(Icons.access_alarm), title: Text("Alarm"))
       ],
       onTap: (idx) {
-            var dlg = new AlertDialog(
-              title: new Text("Greeting"),
-              content: new Text("Tapped $idx"),
+            var dlg = AlertDialog(
+              title: Text("Greeting"),
+              content: Text("Tapped $idx"),
             );
             showDialog(context: context, child: dlg);
       },
@@ -37,7 +37,7 @@ class ScaffoldPage extends StatelessWidget {
           onPressed: () {
             _scaffoldKey.currentState.openDrawer();
           },
-          child: new Icon(Icons.add)),
+          child: Icon(Icons.add)),
     );
   }
 }

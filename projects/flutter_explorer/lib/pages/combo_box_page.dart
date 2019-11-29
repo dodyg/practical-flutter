@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 
 class ComboBoxPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => new _ComboBoxPageState();
+  State<StatefulWidget> createState() => _ComboBoxPageState();
 }
 
 class _ComboBoxPageState extends State<ComboBoxPage> {
@@ -19,9 +19,9 @@ class _ComboBoxPageState extends State<ComboBoxPage> {
   }
 
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
-    var items = new List<DropdownMenuItem<String>>();
+    var items = List<DropdownMenuItem<String>>();
     for (var c in _cities) {
-      items.add(new DropdownMenuItem(value: c, child: new Text(c)));
+      items.add(DropdownMenuItem(value: c, child: Text(c)));
     }
 
     return items;
@@ -29,11 +29,11 @@ class _ComboBoxPageState extends State<ComboBoxPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        body: new Container(
+    return Scaffold(
+        body: Container(
             color: Colors.white,
-            child: new Center(
-              child: new DropdownButton(
+            child: Center(
+              child: DropdownButton(
                 value: _currentCity,
                 items: _dropDownMenuItems,
                 onChanged: changeDropDownItems,
