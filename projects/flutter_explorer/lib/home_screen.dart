@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
-ListTile navigateTo(BuildContext context, String text, String nav) =>
-    new ListTile(
-      title: Text(text),
-      onTap: () {
-        Navigator.of(context).pushNamed(nav);
-      },
-    );
+class _NavigateTo extends StatelessWidget {
+  final String _text, _nav;
+
+  _NavigateTo(this._text, this._nav);
+
+  @override
+  Widget build(BuildContext context) => Container(
+    child: ListTile(
+          title: Text(_text),
+          onTap: () {
+            Navigator.of(context).pushNamed(_nav);
+          },
+        ),
+    decoration: BoxDecoration(border: Border(bottom: BorderSide(color:Colors.black54))),
+  );
+}
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -17,20 +26,19 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              navigateTo(context, "Hello World", "/hello-world"),
-              navigateTo(context, "Show Dialog Page", "/dialog/alert"),
-              navigateTo(context, "Show Rows", "/layouts/rows/simple"),
-              navigateTo(context, "Show Columns", "/layouts/columns/simple"),
-              navigateTo(context, "Container", "/layouts/containers/simple"),
-              navigateTo(
-                  context, "Container Square", "/layouts/containers/square"),
-              navigateTo(context, "List", "/layouts/list/simple"),
-              navigateTo(context, "Form", "/layouts/form/simple"),
-              navigateTo(context, "Scaffold", "/layouts/scaffold/simple"),
-              navigateTo(context, "Calculator", "/apps/calculator"),
-              navigateTo(context, "SizedBox", "/layouts/sized_box/simple"),
-              navigateTo(context, "Counter", "/apps/redux_counter_app"),
-              navigateTo(context, "Combo Box", "/elements/combobox/simple")
+              _NavigateTo("Hello World", "/hello-world"),
+              _NavigateTo("Show Dialog Page", "/dialog/alert"),
+              _NavigateTo("Show Rows", "/layouts/rows/simple"),
+              _NavigateTo("Show Columns", "/layouts/columns/simple"),
+              _NavigateTo("Container", "/layouts/containers/simple"),
+              _NavigateTo("Container Square", "/layouts/containers/square"),
+              _NavigateTo("List", "/layouts/list/simple"),
+              _NavigateTo("Form", "/layouts/form/simple"),
+              _NavigateTo("Scaffold", "/layouts/scaffold/simple"),
+              _NavigateTo("Calculator", "/apps/calculator"),
+              _NavigateTo("SizedBox", "/layouts/sized_box/simple"),
+              _NavigateTo("Counter", "/apps/redux_counter_app"),
+              _NavigateTo("Combo Box", "/elements/combobox/simple")
             ])
       ]),
     );
