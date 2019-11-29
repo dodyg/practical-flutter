@@ -1,8 +1,3 @@
-# hello_world
+# Practical Flutter
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+This project contains various techniques (UI and Architecture) available on a Flutter app.

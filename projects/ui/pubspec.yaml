@@ -1,11 +1,7 @@
 name: hello_world
-description: A new Flutter project.
+description: A collection of various flutter samples on a single app
 
 dependencies:
-  meta: '>=1.1.0 <2.0.0'
-  feedparser: "^0.0.1"
-  redux: ^2.0.2
-  flutter_redux: '0.3.2'
   flutter:
     sdk: flutter
 

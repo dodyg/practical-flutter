@@ -9,9 +9,6 @@ import 'pages/scaffold_page.dart';
 import 'pages/form_page.dart';
 import 'pages/sized_box_page.dart';
 import 'pages/combo_box_page.dart';
-import 'apps/rss_app.dart';
-import 'apps/redux_counter/redux_counter_app.dart';
-import 'apps/redux_calculator/calculator_app.dart';
 
 const Inset = 8.0;
 
@@ -70,9 +67,6 @@ var x = new MaterialApp(home: new HomeScreen(), routes: <String, WidgetBuilder>{
   '/layouts/scaffold/simple': (context) => new ScaffoldPage(),
   '/layouts/form/simple': (context) => new FormPage(),
   '/layouts/sized_box/simple': (context) => new SizedBoxPage(),
-  '/apps/rss': (context) => new RssApp(),
-  '/apps/calculator': (context) => new CalculatorApp(),
-  '/apps/redux_counter_app': (context) => new ReduxCounterApp(),
   '/elements/combobox/simple': (context) => new ComboBoxPage()
 });
 
