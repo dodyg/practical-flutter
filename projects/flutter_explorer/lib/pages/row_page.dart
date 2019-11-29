@@ -6,7 +6,6 @@ class RowPage extends StatelessWidget{
     return Row(children: <Widget>[
      Text("Row 1"),
      Text("Row 2"),
-     Text("Row 3")
     ]);
   }
 }

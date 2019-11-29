@@ -7,14 +7,15 @@ class _NavigateTo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    child: ListTile(
+        child: ListTile(
           title: Text(_text),
           onTap: () {
             Navigator.of(context).pushNamed(_nav);
           },
         ),
-    decoration: BoxDecoration(border: Border(bottom: BorderSide(color:Colors.black54))),
-  );
+        decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: Colors.black54))),
+      );
 }
 
 class HomeScreen extends StatelessWidget {
@@ -35,9 +36,7 @@ class HomeScreen extends StatelessWidget {
               _NavigateTo("List", "/layouts/list/simple"),
               _NavigateTo("Form", "/layouts/form/simple"),
               _NavigateTo("Scaffold", "/layouts/scaffold/simple"),
-              _NavigateTo("Calculator", "/apps/calculator"),
               _NavigateTo("SizedBox", "/layouts/sized_box/simple"),
-              _NavigateTo("Counter", "/apps/redux_counter_app"),
               _NavigateTo("Combo Box", "/elements/combobox/simple")
             ])
       ]),
