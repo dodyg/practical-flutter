@@ -9,8 +9,16 @@ import 'pages/list_page.dart';
 import 'pages/row_page.dart';
 import 'pages/scaffold_page.dart';
 import 'pages/sized_box_page.dart';
+import 'extras/form_builder/form_builder_basic_form.dart';
 
-final routes = <String, WidgetBuilder>{
+routes() {
+  var r = <String, WidgetBuilder>{};
+  r.addAll(_uiRoutes);
+  r.addAll(_extraRoutes);
+  return r;
+}
+
+final _uiRoutes = <String, WidgetBuilder>{
   '/hello-world': (context) => HelloWorldPage(),
   '/dialog/alert': (context) => AlertDialogPage(),
   '/layouts/rows/simple': (context) => RowPage(),
@@ -20,6 +28,10 @@ final routes = <String, WidgetBuilder>{
   '/layouts/list/simple': (context) => ListPage(),
   '/layouts/scaffold/simple': (context) => ScaffoldPage(),
   '/layouts/form/simple': (context) => FormPage(),
-  '/layouts/sized_box/simple': (context) => SizedBoxPage(),
+  '/layouts/sized-box/simple': (context) => SizedBoxPage(),
   '/elements/combobox/simple': (context) => ComboBoxPage()
 };
+
+final _extraRoutes = <String, WidgetBuilder>{
+  '/extras/form-builder/basic': (context) => FormBuilderBasicForm()
+ };

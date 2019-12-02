@@ -19,7 +19,8 @@ class UISamplesScreen extends StatelessWidget {
               NavigateTo("Form", "/layouts/form/simple"),
               NavigateTo("Scaffold", "/layouts/scaffold/simple"),
               NavigateTo("SizedBox", "/layouts/sized_box/simple"),
-              NavigateTo("Combo Box", "/elements/combobox/simple")
+              NavigateTo("Combo Box", "/elements/combobox/simple"),
+              NavigateTo("Basic Form Builder", "/extras/form-builder/basic")
             ])
       ]);
   }

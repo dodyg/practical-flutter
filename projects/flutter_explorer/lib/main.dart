@@ -25,7 +25,7 @@ var home = DefaultTabController(
   ),
 );
 
-var x = new MaterialApp(title: "Flutter Explorer", home: home, routes: routes, theme: myTheme);
+var x = new MaterialApp(title: "Flutter Explorer", home: home, routes: routes(), theme: myTheme);
 
 void main() {
   runApp(x);
