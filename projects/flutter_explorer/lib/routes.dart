@@ -9,7 +9,8 @@ import 'pages/list_page.dart';
 import 'pages/row_page.dart';
 import 'pages/scaffold_page.dart';
 import 'pages/sized_box_page.dart';
-import 'extras/form_builder/form_builder_basic_form.dart';
+import 'extras/form_builder/form_builder_text_field_form.dart';
+import 'extras/form_builder/form_builder_date_time_picker_form.dart';
 
 routes() {
   var r = <String, WidgetBuilder>{};
@@ -33,5 +34,6 @@ final _uiRoutes = <String, WidgetBuilder>{
 };
 
 final _extraRoutes = <String, WidgetBuilder>{
-  '/extras/form-builder/basic': (context) => FormBuilderBasicForm()
+  '/extras/form-builder/text-field': (context) => FormBuilderTextFieldForm(),
+  '/extras/form-builder/date-time-picker' : (context) => FormBuilderDateTimePickerForm()
  };

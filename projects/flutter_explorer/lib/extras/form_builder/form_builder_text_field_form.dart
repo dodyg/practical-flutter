@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-class FormBuilderBasicForm extends StatefulWidget{
+class FormBuilderTextFieldForm extends StatefulWidget{
   @override
-  _FormBuilderBasicFormState createState() => _FormBuilderBasicFormState();
+  _FormBuilderTextFieldFormState createState() => _FormBuilderTextFieldFormState();
 }
 
-class _FormBuilderBasicFormState extends State<FormBuilderBasicForm>{
+class _FormBuilderTextFieldFormState extends State<FormBuilderTextFieldForm>{
   final GlobalKey<FormBuilderState> _fbKey = GlobalKey<FormBuilderState>();
   @override
   Widget build(BuildContext context) {
