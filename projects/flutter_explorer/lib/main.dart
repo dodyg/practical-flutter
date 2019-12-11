@@ -11,8 +11,8 @@ var home = DefaultTabController(
     appBar: AppBar(
       bottom: TabBar(
         tabs: [
-          Tab(icon: Icon(Icons.directions_car)),
-          Tab(icon: Icon(Icons.directions_transit)),
+          Tab(icon: Icon(Icons.featured_play_list)),
+          Tab(icon: Icon(Icons.apps)),
         ],
       ),
     ),

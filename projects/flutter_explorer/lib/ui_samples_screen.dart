@@ -18,7 +18,7 @@ class UISamplesScreen extends StatelessWidget {
               NavigateTo("List", "/layouts/list/simple"),
               NavigateTo("Form", "/layouts/form/simple"),
               NavigateTo("Scaffold", "/layouts/scaffold/simple"),
-              NavigateTo("SizedBox", "/layouts/sized_box/simple"),
+              NavigateTo("SizedBox", "/layouts/sized-box/simple"),
               NavigateTo("Combo Box", "/elements/combobox/simple"),
               NavigateTo("Form Builder - Text Field", "/extras/form-builder/text-field"),
               NavigateTo("Form Builder - Date Time Picker", "/extras/form-builder/date-time-picker")
